@@ -4,8 +4,21 @@
 </template>
 
 <script>
+import { store } from './store';
   export default {
-    name: 'App'
+    name: 'App',
+    data() {
+      return {
+        store
+      }
+    },
+    methods : {
+      getAllProjects(){
+        axios.get(this.store.apiBaseUrl+'/projects').then((res) =>{
+          console.log(res.data)
+        });
+      }
+    }
   }
 </script>
 
