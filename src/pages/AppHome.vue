@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>Homepage (App.home)</h1>
+        <p>sadiujasjdsa</p>
     </div>
 </template>
 
