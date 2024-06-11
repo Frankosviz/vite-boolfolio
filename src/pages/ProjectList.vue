@@ -3,10 +3,13 @@
         <div v-for="project in projects" :key="project.id">{{ project.title }}
             <img :src="store.imgBasePath + project.cover_image" :alt="project.title">
         </div>
+        <RouterLink :to="{ name: 'single-project'}">Details Project</RouterLink>
+        <RouterLink :to="{ name: 'home' }">Back to Home</RouterLink>
     </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
 import { store } from '../store';
 import axios from 'axios';
 export default {

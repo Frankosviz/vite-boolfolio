@@ -8,10 +8,13 @@
       </router-link>
     </li>
   </ul>
-  <router-view></router-view>
-</template>
 
-<script>
+  <main class="container">
+    <router-view></router-view>
+  </main>
+  </template>
+
+<script> 
   import { store } from './store';
   export default {
     name: 'App',
@@ -26,10 +29,6 @@
             label: "Projects",
             routeName: "projects"
           },
-          {
-            label: "Type",
-            routeName: "type"
-          }
         ]
       }
     }

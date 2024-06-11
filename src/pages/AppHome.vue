@@ -5,9 +5,10 @@
 </template>
 
 <script>
+import { store } from '../store';
+import axios from 'axios';
 export default {
     name: 'AppHome',
-
     data() {
         return {
             store
@@ -16,4 +17,5 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>
