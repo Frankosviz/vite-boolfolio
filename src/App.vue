@@ -1,44 +1,37 @@
 <template>
   <h1 class="text-center">App.vue</h1>
   <i class="fa fa-solid fa-home"></i>
-
-  
-  
-
-<main class="container">
-  <router-view>
-  
-  </router-view>
-</main>
-
+  <ul>
+    <li v-for="(item, index) in menuItems" :key="index">
+      <router-link :to="{ name: item.routeName }" class="nav-link">
+        {{ item.label }}
+      </router-link>
+    </li>
+  </ul>
+  <router-view></router-view>
 </template>
 
 <script>
-import { store } from './store';
-import axios from 'axios';
+  import { store } from './store';
   export default {
     name: 'App',
     data() {
       return {
-        store,
-        projects : [],
-        // nextPage: 0,
-        // currentPage: 0
+        menuItems: [
+          {
+            label: "Home",
+            routeName: "home"
+          },
+          {
+            label: "Projects",
+            routeName: "projects"
+          },
+          {
+            label: "Type",
+            routeName: "type"
+          }
+        ]
       }
-    },
-    methods : {
-      getAllProjects(){
-        axios.get(this.store.apiBaseUrl + '/projects').then((res) => {
-          //console.log(res.data)
-          this.projects = res.data.results;
-          // Se facciamo la paginazione
-          // this.nextPage = this.currentPage + 1;
-          // this.currentPage = res.data.results.current_page;
-        });
-      }
-    },
-    mounted(){
-      this.getAllProjects();
     }
   }
 </script>

@@ -1,14 +1,18 @@
 <template>
     <div>
-        <div v-for="project in projects" :key="project.id">{{ project.title }}
-            <img :src="store.imgBasePath + project.cover_image" :alt="project.title">
-        </div>
+        <h1>Homepage (App.home)</h1>
     </div>
 </template>
 
 <script>
 export default {
+    name: 'AppHome',
 
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
