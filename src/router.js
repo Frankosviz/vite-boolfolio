@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import AppHome from './pages/AppHome.vue';
 import ProjectList from './pages/ProjectList.vue';
-import ProjectComponent from './pages/ProjectComponent.vue';
+import ProjectComponent from './components/ProjectComponent.vue';
 import AboutComponent from './components/AboutComponent.vue';
 import ContactComponent from './components/ContactComponent.vue';
 import NotFound from './pages/NotFound.vue';

@@ -2,8 +2,6 @@
     <div>
         <div v-for="project in projects" :key="project.id">{{ project.title }}
             <img :src="store.imgBasePath + project.cover_image" :alt="project.title">
-
-            <RouterLink :to="{ name: 'single-project', params: { slug: project.slug } }">Guarda il progetto</RouterLink>
         </div>
     </div>
     <button @click="getAllProjects()" class="btn btn-primary">Cambia pagina</button>

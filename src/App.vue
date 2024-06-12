@@ -1,45 +1,31 @@
 <template>
-  <h1 class="text-center">Projects</h1>
-  <ul class="nav justify-content-center">
-    <li v-for="(item, index) in menuItems" :key="index">
-      <router-link :to="{ name: item.routeName }" class="nav-link">
-        {{ item.label }}
-      </router-link>
-    </li>
-  </ul>
-
+  <HeaderComponent />
   <main class="container">
     <router-view></router-view>
   </main>
 </template>
 
 <script>
+import HeaderComponent from './components/HeaderComponent.vue';
+import ProjectList from './pages/ProjectList.vue';
+import AppHome from './pages/AppHome.vue';
+import AboutComponent from './components/AboutComponent.vue';
+import ContactComponent from './components/ContactComponent.vue';
 import { store } from './store';
 export default {
   name: 'App',
+  components: {
+    HeaderComponent,
+    ProjectList,
+    AppHome,
+    AboutComponent,
+    ContactComponent
+  },
   data() {
     return {
-      menuItems: [
-        {
-          label: "Home",
-          routeName: "home"
-        },
-        {
-          label: "Projects",
-          routeName: "projects"
-        },
-        {
-          label: "About",
-          routeName: "about"
-        },
-        {
-          label: "Contacts",
-          routeName: "contact"
-        },
-        
-      ]
+      store
     }
-  }
+  },
 }
 </script>
 
