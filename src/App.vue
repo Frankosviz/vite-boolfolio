@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-center">Projects</h1>
-  <ul>
+  <ul class="nav justify-content-center">
     <li v-for="(item, index) in menuItems" :key="index">
       <router-link :to="{ name: item.routeName }" class="nav-link">
         {{ item.label }}
@@ -28,6 +28,15 @@ export default {
           label: "Projects",
           routeName: "projects"
         },
+        {
+          label: "About",
+          routeName: "about"
+        },
+        {
+          label: "Contacts",
+          routeName: "contact"
+        },
+        
       ]
     }
   }
