@@ -16,7 +16,7 @@
         <div class="row">
             <form @submit.prevent="sendForm()" class="col-12 text-start">
                 <div class="mb-3">
-                    <input type="text" :class="{ 'is-invalid': errors.name }" class="form-control border-0 border-bottom" placeholder="Name" v-model="name">
+                    <input type="text" class="form-control border-0 border-bottom" placeholder="Name" v-model="name">
                 </div>
                 <div class="mb-3">
                     <input type="email" class="form-control border-0 border-bottom" placeholder="Email" v-model="email">
@@ -40,7 +40,7 @@ export default {
         return {
             store,
             name: '',
-            email: '',
+            address: '',
             message: '',
             errors: {},
             loading: false,
@@ -57,17 +57,19 @@ export default {
                 message: this.message
             }
             // console.log(data)
-            axios.post(`this.store.apiBaseUrl + /contacts`, data).then((res) => {
-                console.log(res.data)
+            axios.post(this.store.apiBaseUrl + '/contacts', data).then((res) => {
+                // console.log(res.data)
                 this.success = true;
                 this.name = '';
-                this.email = '';
+                this.address = '';
                 this.message = '';
             }).catch((error) => {
                 this.errors = error.response.data.errors;
             }).finally(() => {
                 // Nella finally svuotiamo i campi dopo che l'utente ha inviato il form, solo se tutto è andato bene
-                
+                this.name = '';
+                this.address = '';
+                this.message = '';
                 this.loading = false;
             })
         }
