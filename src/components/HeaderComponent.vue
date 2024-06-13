@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1 class="text-center">Projects</h1>
         <ul class="nav justify-content-center">
             <li v-for="(item, index) in menuItems" :key="index">
                 <router-link :to="{ name: item.routeName }" class="nav-link">

@@ -1,33 +1,29 @@
 <template>
-    <div>
-        Contact Us
-        <div class="row">
-            <div class="col-12">
-                <div class="alert alert-success" v-if="success">
-                    Messaggio inviato con successo!
-                </div>
+    <div class="alert alert-success" v-if="success">
+        Messaggio inviato con successo!
+    </div>
+
+    <div v-if="errors">
+        <p v-for="error in errors">{{ error }}</p>
+    </div>
+    <div class="h-100">
+        <form @submit.prevent="sendForm()" class="f-d-editform-container f-d-transparent-layer-edit">
+            <div class="mb-3">
+                <label class="form-label lightbrown fw-bold" for="name">Name</label>
+                <input type="text" class="form-control f-d-bg-form" placeholder="Name" v-model="name">
             </div>
-        </div>
-        <div v-if="errors">
-            <ul>
-                <li v-for="error in errors">{{ error }}</li>
-            </ul>
-        </div>
-        <div class="row">
-            <form @submit.prevent="sendForm()" class="col-12 text-start">
-                <div class="mb-3">
-                    <input type="text" class="form-control border-0 border-bottom" placeholder="Name" v-model="name">
-                </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control border-0 border-bottom" placeholder="Email" v-model="email">
-                </div>
-                <div class="mb-3">
-                    <label for="message">Your message</label>
-                    <textarea id="message" cols="30" rows="10" class="form-control border-0 border-bottom" placeholder="Message" v-model="message">{{ message }}</textarea>
-                </div>
-                <button type="submit" :disabled="loading" class="btn btn-primary">{{ loading ? 'Sending...' : 'Send' }}</button>
-            </form>
-        </div>
+            <div class="mb-3">
+                <label class="form-label lightbrown fw-bold" for="name">Email</label>
+                <input type="email" class="form-control f-d-bg-form" placeholder="Email" v-model="email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label lightbrown fw-bold" for="message">Your message</label>
+                <textarea id="message" cols="30" rows="10" class="form-control f-d-bg-form" placeholder="Message"
+                    v-model="message">{{ message }}</textarea>
+            </div>
+            <button type="submit" :disabled="loading" class="f-d-button-form">{{ loading ? 'Sending...' : 'Send'
+                }}</button>
+        </form>
     </div>
 </template>
 
@@ -51,7 +47,7 @@ export default {
         sendForm() {
             this.success = false;
             this.loading = true;
-            const data ={
+            const data = {
                 name: this.name,
                 address: this.email,
                 message: this.message
