@@ -24,7 +24,7 @@
             <!-- Authentication Links -->
 
             <li class="nav-item text-center">
-              <a class="nav-link" href="#"><i class="fa-solid fa-user"></i>
+              <a class="nav-link" href=""><i class="fa-solid fa-user"></i>
               </a>
             </li>
 
@@ -81,7 +81,8 @@ export default {
   },
   data() {
     return {
-      store
+      store,
+      
     }
   },
 }
