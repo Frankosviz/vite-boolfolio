@@ -4,7 +4,7 @@
         <p class="green fs-4 fw-bold">
             User
         </p>
-        <a href="{{ router.('home') }}" class="d-flex justify-content-start align-items-center">
+        <a href="{{ route('home') }}" class="d-flex justify-content-start align-items-center">
             <i class="fs-5 fa-solid fa-chart-line"></i>
             Home
         </a>

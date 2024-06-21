@@ -46,3 +46,4 @@ const router = createRouter({
 });
 
 export { router };
+console.log(router)

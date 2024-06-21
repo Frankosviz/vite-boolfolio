@@ -1,7 +1,8 @@
 <template>
     <div>
-        <div v-for="project in projects" :key="project.id">{{ project.title }}
-            <img :src="store.imgBasePath + project.cover_image" :alt="project.title">
+        <h1>Project</h1>
+        <div v-for="project in projects" :key="project.id">
+            <RouterLink :to="{ name: 'single-project', params: { slug: project.slug } }">{{ project.title }}</RouterLink>
         </div>
     </div>
     <button @click="getAllProjects()" class="btn btn-primary">Cambia pagina</button>
@@ -24,7 +25,7 @@ export default {
         getAllProjects() {
             axios.get(this.store.apiBaseUrl + '/projects').then((res) => {
                 //console.log(res.data)
-                this.projects = res.data.results;
+                this.projects = res.data.results.data;
                 // Se facciamo la paginazione
                 // this.nextPage = this.currentPage + 1;
                 // this.currentPage = res.data.results.current_page;
