@@ -14,6 +14,8 @@
 import { store } from '../store';
 import ProjectComponent from '../components/ProjectComponent.vue';
 import ProjectList from '../pages/ProjectList.vue';
+import TypeComponent from '../pages/TypeComponent.vue';
+import TechnologyComponent from '../pages/TechnologyComponent.vue';
 import AppHome from '../pages/AppHome.vue';
 import AboutComponent from '../components/AboutComponent.vue';
 import ContactComponent from '../components/ContactComponent.vue';
@@ -22,6 +24,8 @@ export default {
     components: {
         ProjectComponent,
         ProjectList,
+        TypeComponent,
+        TechnologyComponent,
         AppHome,
         AboutComponent,
         ContactComponent

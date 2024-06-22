@@ -530,3 +530,17 @@ td:first-child {
     width: 150px;
     height: 150px;
 }
+
+// Vue.js
+
+.f-d-vue-card {
+    width: 200px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+    color: $lightbrown;
+    font-weight: normal;
+    border: 2px solid $lightbrown;
+}
