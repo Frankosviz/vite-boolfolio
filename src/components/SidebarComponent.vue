@@ -5,7 +5,7 @@
             User
         </p>
         <a href="{{ route('home') }}" class="d-flex justify-content-start align-items-center">
-            <i class="fs-5 fa-solid fa-chart-line"></i>
+            <i class="fs-5 fa-solid fa-home"></i>
             Home
         </a>
         <a href="{{ route('projects') }}" class="d-flex justify-content-start align-items-center">
@@ -24,7 +24,7 @@
         </a>
         <a href="#" class="d-flex justify-content-start align-items-center">
             <i class="fs-5 fa-solid fa-chart-line"></i>
-            Charts
+            Technologies
         </a>
     </div>
 

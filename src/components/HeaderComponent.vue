@@ -40,6 +40,14 @@ export default {
                     routeName: "projects"
                 },
                 {
+                    label: "Types",
+                    routeName: "types"
+                },
+                {
+                    label: "Technologies",
+                    routeName: "technologies"
+                },
+                {
                     label: "About",
                     routeName: "about"
                 },

@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import AppHome from './pages/AppHome.vue';
 import ProjectList from './pages/ProjectList.vue';
 import ProjectComponent from './components/ProjectComponent.vue';
+import TypeComponent from './pages/TypeComponent.vue';
+import TechnologyComponent from './pages/TechnologyComponent.vue';
 import AboutComponent from './components/AboutComponent.vue';
 import ContactComponent from './components/ContactComponent.vue';
 import NotFound from './pages/NotFound.vue';
@@ -27,6 +29,16 @@ const router = createRouter({
             component: ProjectComponent
         },
         {
+            path: '/types',
+            name: 'types',
+            component: TypeComponent
+        },
+        {
+            path: '/technologies',
+            name: 'technologies',
+            component: TechnologyComponent
+        },
+        {
             path: '/about',
             name: 'about',
             component: AboutComponent
@@ -46,4 +58,3 @@ const router = createRouter({
 });
 
 export { router };
-console.log(router)
